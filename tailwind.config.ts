@@ -27,6 +27,9 @@ const config = {
         primary: {
           DEFAULT: "hsl(var(--primary))",
           foreground: "hsl(var(--primary-foreground))",
+          variantDark: '#003D1F',
+          hoverLink: '#07421D',
+          sidebarBg: '#00753B'
         },
         secondary: {
           DEFAULT: "hsl(var(--secondary))",
