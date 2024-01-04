@@ -1,9 +1,13 @@
 import React from 'react'
+import SubHeader from "@/components/ui/header/SubHeader";
 
 export default function Mail () {
     return (
         <>
-            Mail main page
+            <SubHeader
+                newLink={'/user-space/mail/new'}
+                title={'Courrier'}
+            />
         </>
     )
 }

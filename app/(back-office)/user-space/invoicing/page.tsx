@@ -1,9 +1,13 @@
 import React from 'react'
+import SubHeader from "@/components/ui/header/SubHeader";
 
 export default function Invoicing () {
     return (
         <>
-            Invoicing main page ...
+            <SubHeader
+                newLink={'/user-space/invoicing/new'}
+                title={'Facturation'}
+            />
         </>
     )
 }
