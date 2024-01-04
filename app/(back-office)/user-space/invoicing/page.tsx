@@ -8,6 +8,9 @@ export default function Invoicing () {
                 newLink={'/user-space/invoicing/new'}
                 title={'Facturation'}
             />
+            <div>
+                Ajout d'une div
+            </div>
         </>
     )
 }
