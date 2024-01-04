@@ -5,7 +5,7 @@ import {OverviewActivitiesCardProps} from "@/types/AppLinks";
 import OverviewActivitiesCard from "@/components/general/OverviewActivitiesCard";
 
 
-export default function () {
+export default function OverviewActivities () {
     
     const overviewActivities: OverviewActivitiesCardProps[] = [
         {
