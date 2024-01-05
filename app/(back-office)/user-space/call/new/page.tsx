@@ -1,7 +1,9 @@
 "use client"
 
-import React from 'react'
+import React, { useState, useEffect } from 'react'
 import * as z from "zod"
+import { useForm } from 'react-hook-form'
+import { zodResolver } from '@hookform/resolvers/zod'
 
 import FormHeader from "@/components/ui/header/FormHeader"
 import { Label } from '@/components/ui/label'
@@ -23,10 +25,26 @@ import {
     CheckIcon,
     ChevronsUpDown
 } from "lucide-react";
-import {FormSchemaProps, PrestataireProps} from "@/types/AppLinks";
+import { PrestataireProps} from "@/types/AppLinks";
+
+
+const formSchema = z.object({
+    username: z.string().min(2).max(50),
+    motive: z.string().min(11).max(100),
+    currentPrestataire: z.string().nonempty({ message: 'Please select a provider.'})
+})
+type FormSchemaProps = z.infer<typeof formSchema>
 
 export default function NewCall () {
 
+    const {
+        register,
+        handleSubmit,
+        setValue,
+        formState: { errors }
+    } = useForm({
+        resolver: zodResolver(formSchema)
+    })
 
     const prestataires:PrestataireProps[] = [
         {
@@ -46,15 +64,17 @@ export default function NewCall () {
             label: "Prestataire 4"
         }
     ]
-    const [open, setOpen] = React.useState(false)
-    const [value, setValue] = React.useState("")
 
-    const formSchema = z.object({
-        username: z.string().min(2).max(50),
-        motive: z.string().min(11).max(100)
-    })
-    type FormSchemaProps = z.infer<typeof formSchema>
+    const [open, setOpen] = useState(false)
+    const [currentPrestataire, setCurrentPrestataire] = useState("")
 
+    const onSubmit = (data: FormSchemaProps) => {
+        console.log(data)
+    }
+
+    useEffect(() => {
+        register('currentPrestataire')
+    }, [register])
 
     return (
         <>
@@ -87,8 +107,8 @@ export default function NewCall () {
                                     aria-expanded={open}
                                     className={'w-[230px] justify-between'}
                                     >
-                                    {value
-                                    ? prestataires.find((prestataire) => prestataire.value === value)?.label
+                                    {currentPrestataire
+                                    ? prestataires.find((prestataire) => prestataire.value === currentPrestataire)?.label
                                     : "Selection le prestataire..."}
                                     <ChevronsUpDown className={'ml-2 h-4 w-4 shrink-0 opacity-50'} />
                                 </Button>
@@ -108,15 +128,16 @@ export default function NewCall () {
                                                     key={prestataire.value}
                                                     value={prestataire.value}
                                                     onSelect={(currentValue) => {
-                                                    setValue(currentValue === value ? "" : currentValue)
+                                                        setCurrentPrestataire(currentValue)
+                                                        setValue('currentPrestataire', currentValue)
                                                         setOpen(false)
-                                                }}
+                                                    }}
                                                     >
                                                     {prestataire.label}
                                                     <CheckIcon
                                                         className={cn(
                                                             "ml-auto h-4 w-4",
-                                                            value === prestataire.value ? "opacity-100" : "opacity-0"
+                                                            currentPrestataire === prestataire.value ? "opacity-100" : "opacity-0"
                                                         )}
                                                     />
                                                 </CommandItem>
