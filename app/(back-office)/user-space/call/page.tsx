@@ -7,7 +7,7 @@ export default function Call () {
         <>
             <SubHeader
                 newLink={'/user-space/call/new'}
-                title={'Call'}
+                title={'Appel'}
             />
         </>
     )

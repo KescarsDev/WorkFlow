@@ -9,9 +9,9 @@ export default function Invoicing () {
                 title={'Facturation'}
             />
             
-            <div>
-                {"Ajout d'une div "}
-            </div>
+            <h1>
+                Un titre
+            </h1>
         </>
     )
 }

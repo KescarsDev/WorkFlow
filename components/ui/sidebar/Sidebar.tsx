@@ -8,6 +8,7 @@ import {
     Workflow,
     ChevronLeft
 } from "lucide-react";
+
 import { GrOverview } from "react-icons/gr"
 import { MdAddIcCall } from "react-icons/md"
 import { IoPeopleCircleOutline } from "react-icons/io5"
@@ -50,7 +51,7 @@ export default function Sidebar () {
     
     return (
         <>
-            <div className='w-60 min-h-screen bg-primary-sidebarBg text-slate-50 flex flex-col justify-between fixed'>
+            <div className={`w-60 min-h-screen bg-primary-sidebarBg text-slate-50 flex flex-col justify-between fixed`}>
                 {/* Top part */}
                 <div className='flex flex-col'>
                     {/* logo */}
