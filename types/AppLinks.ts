@@ -9,14 +9,6 @@ export type GeneralNavLinksProps = Omit<SidebarLinksProps, 'icon'>
 export type OverviewActivitiesCardProps = Omit<SidebarLinksProps, 'icon'> & {
     number: number
 }
-export interface PrestataireProps {
-    value: string
+export interface ProvidersProps {
     label: string
-}
-export interface FormSchemaProps {
-    username: string
-    motive: string
-    contact: string
-    date: Date
-    Observation: string
 }
