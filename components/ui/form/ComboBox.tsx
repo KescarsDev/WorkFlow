@@ -1,3 +1,5 @@
+"use client"
+
 import React, {useEffect, useState, Fragment} from 'react'
 import { Listbox, Transition } from '@headlessui/react'
 import { uuid } from 'uuidv4'
@@ -9,6 +11,7 @@ import {
     MousePointerSquareDashed 
 } from "lucide-react";
 import {ProvidersProps} from "@/types/AppLinks";
+import clsx from 'clsx';
 
 const providers:ProvidersProps[] = [
     {
@@ -26,7 +29,10 @@ const providers:ProvidersProps[] = [
 ]
 
 
-export default function ComboBox () {
+
+export default function ComboBox ({
+    
+}) {
 
     const [selectedProvider, setSelectedProvider] = useState(providers[0])
 
@@ -63,7 +69,12 @@ export default function ComboBox () {
             </div> */}
 
             <div className="w-72">
-                <Listbox value={selectedProvider} onChange={setSelectedProvider}>
+                <Listbox 
+                    value={selectedProvider} 
+                    onChange={setSelectedProvider}
+                    
+                    
+                >
                 
                     {({ open }) => (
                     <>

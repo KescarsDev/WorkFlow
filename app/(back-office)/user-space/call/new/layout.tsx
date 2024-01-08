@@ -1,8 +1,6 @@
-
-import Footer from '@/components/ui/footer/Footer'
-import FormHeader from '@/components/ui/header/FormHeader'
-import Header from '@/components/ui/header/Header'
 import React from 'react'
+import FormHeader from '@/components/ui/header/FormHeader'
+
 
 interface Props {
     children: React.ReactNode
@@ -15,8 +13,7 @@ export default function Layout({ children }: Props) {
             title={'Nouvel Appel'}
             href={'#'}
         />
-        {children}
-        <Footer />
+        {children} 
     </div>
   ) 
 }

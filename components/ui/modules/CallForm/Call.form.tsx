@@ -3,10 +3,13 @@ import React from 'react'
 import Input from '../../form/Input'
 import ComboBox from '../../form/ComboBox'
 import Textarea from '../../form/Textarea'
+import Button from '../../button/Button'
+
+import { FaPlus } from "react-icons/fa6"
 
 
 interface Props {
-    form: FormTypes
+    form: FormTypes 
 }
 
 export default function CallForm ({form}: Props) {
@@ -26,7 +29,7 @@ export default function CallForm ({form}: Props) {
                 >
                     Prestataire
                 </label>
-                <ComboBox />
+                <ComboBox/>
             </div>
             <div className='flex items-center gap-2 justify-between'>
                 <label 
@@ -42,7 +45,7 @@ export default function CallForm ({form}: Props) {
                     register={register}
                     errors={errors}
                     errorMsg='Erreur dans le remplissage du formulaire'
-                    id='provider'
+                    id='name'
                     isAutoCompleted={true}
                     className=''
                 />
@@ -122,10 +125,28 @@ export default function CallForm ({form}: Props) {
                     isLoading={isLoading}
                     placeholder="Nom de l'interlocuteur"
                     register={register}
-                    id='provider'
+                    id='description'
                     className='mt-2'
+                    cols={30}
+                    rows={10}
                 />
             </div>
+        </div>
+        <div className='mt-6 flex items-center gap-6'>
+            <Button
+                isLoading={isLoading}
+                icon={{icon: FaPlus}}
+                iconPosition='left'
+                type='submit'
+            >
+                Enregister
+            </Button>
+            <Button
+                type='button'
+                variant='secondary'
+            >
+                Annuler
+            </Button>
         </div>
     </form>
   )

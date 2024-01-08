@@ -7,12 +7,16 @@ interface TextareaProps {
     register: any
     id: string
     className: string
+    cols: number
+    rows: number
 }
 export default function Textarea({
     isLoading,
     placeholder,
     register,
     id,
+    cols,
+    rows,
     className
 }: TextareaProps) {
   return (
@@ -23,8 +27,8 @@ export default function Textarea({
                 placeholder={placeholder}
                 name={id} 
                 id={id} 
-                cols={30} 
-                rows={10}
+                cols={cols} 
+                rows={rows}
                 className={clsx(
                     isLoading && 'cursor-not-allowed',
                     "w-[650px] py-1.5 px-4 border border-gray-00 shadow rounded-lg font-semibold focus:outline-none placeholder:font-semibold animate",

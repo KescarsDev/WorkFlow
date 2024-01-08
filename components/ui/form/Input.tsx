@@ -4,7 +4,7 @@ import clsx from 'clsx'
 interface InputProps {
     isLoading?: boolean
     placeholder: string
-    type?: 'email' | 'text' | 'password' | 'date'
+    type?: 'email' | 'text' | 'password' | 'date' | 'number'
     register: any
     errors: any
     errorMsg?: string

@@ -1,32 +1,31 @@
-"use client"
+'use client'
 
-import { CallFormFieldsType } from "@/types/Forms";
+import userToggle from '@/hooks/user-toggle'
+import { MailFormFieldsType } from '@/types/Forms'
+import React from 'react'
+import { SubmitHandler, useForm } from 'react-hook-form'
+import MailView from './Mail.view'
 
-import CallView  from "@/components/ui/modules/CallForm/Call.view"
-import { useForm, SubmitHandler } from "react-hook-form";
-import  userToggle  from "@/hooks/user-toggle";
-
-
-export default function CallContainer () {
+export default function MailContainer () {
 
     const { value: isLoading, setValue: setIsLoading } = userToggle()
-    
+
     const {
         handleSubmit,
         formState: {errors},
         register,
         setError,
         reset
-    } = useForm<CallFormFieldsType>()
+    } = useForm<MailFormFieldsType>()
 
-    const onSubmit: SubmitHandler<CallFormFieldsType> = async (formData) => {
+    const onSubmit: SubmitHandler<MailFormFieldsType> = async (formData) => {
         setIsLoading(true)
         console.log('formData', formData)
     }
-    
-    return(
-        <> 
-            <CallView
+
+    return (
+        <>
+            <MailView
                 form={{
                     errors,
                     isLoading,
