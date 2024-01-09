@@ -3,6 +3,7 @@ import React from 'react'
 
 import { FormTypes } from '@/types/Forms'
 import CallContainer from '@/components/ui/modules/CallForm/Call.container'
+import FormHeader from '@/components/ui/header/FormHeader'
 
 
 
@@ -17,7 +18,11 @@ export default function NewCall ({ form }:Props) {
 
     return (
         <>
-            <div className='mt-4 max-h-screen'>
+            <FormHeader
+                title={'Nouvel Appel'}
+                href={'#'}
+            />
+            <div className='mt-4'>
                 {/* Form */}
                 <CallContainer />
             </div>

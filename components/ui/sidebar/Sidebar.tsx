@@ -15,8 +15,9 @@ import { IoPeopleCircleOutline } from "react-icons/io5"
 import { FaFileInvoice } from "react-icons/fa6"
 import { FaMailchimp } from "react-icons/fa6"
 
-import { SidebarLinksProps } from '@/types/AppLinks'
+import { DropdownLinksProps, SidebarItem, SidebarLinksProps } from '@/types/AppLinks'
 import { Button } from '@/components/ui/button'
+import SidebarDropdownLinks from './SidebarDopdownLinks';
 
 export default function Sidebar () {
     
@@ -40,13 +41,23 @@ export default function Sidebar () {
         {
             href: '/user-space/invoicing',
             label: 'Facturation',
-            icon: <FaFileInvoice className={'w-6 h-6'} />
+            icon: <FaFileInvoice className={'w-6 h-6'} />,
         },
         {
             href: '/user-space/mail',
             label: 'Courrier',
             icon: <FaMailchimp className={'w-6 h-6'} />
         },
+    ]
+    const InvoicingLinks:SidebarItem[] = [
+        {
+            label: 'Reception Facture',
+            href: '/user-space/invoicing/receipt-invoice'
+        },
+        {
+            label: 'Remise Chèque',
+            href: '/user-space/invoicing/check-delivery'
+        }
     ]
     
     return (
@@ -66,25 +77,23 @@ export default function Sidebar () {
                     </Link>
                     {/* Links */}
                     <nav className='flex flex-col gap-8 px-3 py-6'>
-                        {SidebarLink.map((link, i) => (
-                            <Link
-                                href={link.href}
-                                key={i}
-                                className={`
-                                    ${
-                                        pathname === link.href
-                                        ? ' bg-primary-hoverLink'
-                                        : ' '
-                                    }
-                                    flex items-center space-x-2 text-slate-50 p-2 hover:bg-primary-hoverLink/50 rounded-md animate
-                                `}
-                                >
-                                {link.icon}
-                                <span className='font-semibold'>
-                                    {link.label}
-                                </span>
-                            </Link>
-                        ))}
+                       <Link href={'/user-space/general/dashboard'}>
+                            <GrOverview className={'w-6 h-6'} />
+                            <span>Général</span>
+                       </Link>
+                       <Link href={'/user-space/call'}>
+                            <MdAddIcCall className={'w-6 h-6'} />
+                            <span>Appel</span>
+                       </Link>
+                       <Link href={'/user-space/visit'}>
+                            <IoPeopleCircleOutline className={'w-6 h-6'} />
+                            <span>Visite</span>
+                       </Link>
+                        <SidebarDropdownLinks 
+                            label='Reception Facture'
+                            items={InvoicingLinks}
+                            icon={FaFileInvoice}
+                        />
                     </nav>
                 </div>
                 

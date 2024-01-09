@@ -4,9 +4,9 @@ import userToggle from '@/hooks/user-toggle'
 import { InvoicingFormFieldsType } from '@/types/Forms'
 import React from 'react'
 import { SubmitHandler, useForm } from 'react-hook-form'
-import InvoicingView from './Invoicing.view'
+import ReceiptInvoicingView from './ReceiptInvoicing.view'
 
-export default function InvoicingContainer () {
+export default function ReceiptInvoicingContainer () {
 
     const { value: isLoading, setValue: setIsLoading } = userToggle()
 
@@ -25,7 +25,7 @@ export default function InvoicingContainer () {
 
     return(
         <>
-            <InvoicingView
+            <ReceiptInvoicingView
                 form={{
                     errors,
                     isLoading,

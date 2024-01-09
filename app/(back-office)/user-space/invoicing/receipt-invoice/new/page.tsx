@@ -1,6 +1,8 @@
-import FormHeader from '@/components/ui/header/FormHeader'
-import InvoicingContainer from '@/components/ui/modules/InvoicingForm/Invoicing.container'
 import React from 'react'
+
+import FormHeader from '@/components/ui/header/FormHeader'
+import ReceiptInvoicingContainer from '@/components/ui/modules/InvoicingForms/ReceiptInvoice/ReceiptInvoicing.container'
+
 
 export default function NewInvoice () {
     return (
@@ -11,7 +13,7 @@ export default function NewInvoice () {
                     href='/user-space/invoicing'
                 />
                 <div className=' h-[80vh] flex items-center justify-center'>
-                    <InvoicingContainer />
+                    <ReceiptInvoicingContainer />
                 </div>
             </div>
         </>

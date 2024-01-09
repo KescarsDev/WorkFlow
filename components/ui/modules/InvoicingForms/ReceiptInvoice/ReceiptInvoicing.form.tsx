@@ -1,9 +1,9 @@
 import React from 'react'
 
 import { FormTypes } from '@/types/Forms'
-import ComboBox from '../../form/ComboBox'
-import Input from '../../form/Input'
-import Button from '../../button/Button'
+import ComboBox from '../../../form/ComboBox'
+import Input from '../../../form/Input'
+import Button from '../../../button/Button'
 import { FaPlus } from 'react-icons/fa6'
 
 
@@ -11,7 +11,7 @@ interface Props {
     form: FormTypes
 }
 
-export default function InvoicingForm ({form}: Props) {
+export default function ReceiptInvoicingForm ({form}: Props) {
 
     const { onSubmit, errors, isLoading, register, handleSubmit } = form
 
