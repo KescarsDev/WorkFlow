@@ -6,7 +6,7 @@ export default function Invoicing () {
     return (
         <>
             <SubHeader
-                newLink={'/user-space/invoicing/new'}
+                newLink={'/user-space/invoicing/receipt-invoice/new'}
                 title={'Facturation'}
             />
             
