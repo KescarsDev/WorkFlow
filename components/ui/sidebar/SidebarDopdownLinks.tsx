@@ -1,6 +1,7 @@
 'use client'
 
 import React from 'react'
+import { usePathname } from 'next/navigation'
 
 import {
     Collapsible,
@@ -24,13 +25,17 @@ export default function SidebarDropdownLinks ({
     icon
 }: SidebarDropdownLinksProps) {
 
+    const pathname = usePathname()
+    const checkDeliveryPathname = '/user-space/invoicing/check-delivery'
+    const receiptInvoicePathname = '/user-space/invoicing/receipt-invoice'
+
     return(
         <Collapsible>
-            <CollapsibleTrigger className='flex justify-between items-center w-full hover:bg-primary-hoverLink p-3 rounded-md animate'>
+            <CollapsibleTrigger className={`${pathname === receiptInvoicePathname && 'bg-my-primary-400'} ${pathname === checkDeliveryPathname && 'bg-my-primary-400'} flex justify-between items-center w-full hover:bg-my-primary-400 p-3 rounded-md animate`}>
                 <div className='flex space-x-2'>
                     <icon.icon className='w-5 h-5' />
                     <span>{label}</span>
-                </div>
+                </div>  
                 <ChevronsUpDown className='w-4 h-4 font-semibold' />
             </CollapsibleTrigger>
             <CollapsibleContent>
@@ -40,6 +45,7 @@ export default function SidebarDropdownLinks ({
                             key={i}
                             href={item.href}
                             label={item.label}
+                            className = {`${pathname === item.href && 'bg-primary-hoverLink'} mt-3`}
                         />
                     ))
                 }

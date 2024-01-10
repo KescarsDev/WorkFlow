@@ -2,6 +2,7 @@
 
 import React from 'react'
 import Link from 'next/link'
+import { usePathname } from 'next/navigation'
 
 import {
     ChevronLeft,
@@ -12,19 +13,43 @@ import { MdAddIcCall } from "react-icons/md"
 import { IoPeopleCircleOutline } from "react-icons/io5"
 import { FaFileInvoice } from "react-icons/fa6"
 import { FaMailchimp } from "react-icons/fa6"
-import { SidebarItem } from '@/types/AppLinks'
+import { SidebarItem, SidebarLinksProps } from '@/types/AppLinks'
 import SidebarDropdownLinks from './SidebarDopdownLinks'
 
 export default function Sidebar () {
 
+    const pathname = usePathname()
+
     const invoicingLinks:SidebarItem[] = [
         {
-            href: '/user-space/invoicing/receipt-invoicing',
+            href: '/user-space/invoicing/receipt-invoice',
             label: 'Reception Facture'
         },
         {
             href: '/user-space/invoicing/check-delivery',
             label: 'Remise Chèque'
+        }
+    ]
+    const sidebarLinks:SidebarLinksProps[] = [
+        {
+            href: '/user-space/general/dashboard',
+            label: 'Général',
+            icon: GrOverview
+        },
+        {
+            href: '/user-space/call',
+            label: 'Appel',
+            icon: MdAddIcCall
+        },
+        {
+            href: '/user-space/visit',
+            label: 'Visit',
+            icon: IoPeopleCircleOutline
+        },
+        {
+            href: '/user-space/mail',
+            label: 'Courrier',
+            icon: FaFileInvoice
         }
     ]
 
@@ -43,40 +68,29 @@ export default function Sidebar () {
                     </span>
                 </Link>
                 {/* Links */}
-                <nav className='flex flex-col gap-8 px-3 py-6'>
+                <nav className='flex flex-col gap-5 px-3 py-6'>
+                    {
+                        sidebarLinks.map((link, i) => (
+                            <Link
+                                key={i}
+                                href={link.href}
+                                className={`${pathname === link.href && 'bg-primary-hoverLink'} flex space-x-2 hover:bg-my-primary-400 p-3 rounded-md animate`}
+                            >
+                                {link.icon}
+                                <span>{link.label}</span>
+                            </Link>
+                        ))
+                    }
+
                     <Link
-                        href={'/user-space/general/dashboard'}
-                        className='flex space-x-2 hover:bg-primary-hoverLink p-3 rounded-md animate'
+                        href={'/user-space/invoicing/receipt-invoice'}
                     >
-                        <GrOverview className='w-6 h-6' />
-                        <span>Général</span>
-                    </Link>
-                    <Link
-                        href={'/user-space/call'}
-                        className='flex space-x-2 hover:bg-primary-hoverLink p-3 rounded-md animate'
-                    >
-                        <MdAddIcCall className='w-6 h-6' />
-                        <span>Appel</span>
-                    </Link>
-                    <Link
-                        href={'/user-space/visit'}
-                        className='flex space-x-2 hover:bg-primary-hoverLink p-3 rounded-md animate'
-                    >
-                        <IoPeopleCircleOutline className='w-6 h-6' />
-                        <span>Visite</span>
-                    </Link>
-                    <Link
-                        href={'/user-space/visit'}
-                        className='flex space-x-2 hover:bg-primary-hoverLink p-3 rounded-md animate'
-                    >
-                        <FaFileInvoice className='w-6 h-6' />
-                        <span>Courrier</span>
-                    </Link>
                     <SidebarDropdownLinks 
                         label='Facturation'
                         items={invoicingLinks}
                         icon={{icon: FaMailchimp}}
                     />
+                    </Link>
                 </nav>
             </div>
             {/* Sidiebar Footer */}
