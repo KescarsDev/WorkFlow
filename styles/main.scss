@@ -5,7 +5,7 @@
 
 @layer base {
    :root {
-      --background: 0 0% 100%;
+      --background: 0 0% 100%; 
       --foreground: 240 10% 3.9%;
       --card: 0 0% 100%;
       --card-foreground: 240 10% 3.9%;
@@ -48,4 +48,22 @@
       --input: 240 3.7% 15.9%;
       --ring: 142.4 71.8% 29.2%;
    }
+}
+
+
+.animate, a, a:hover {
+   -webkit-transition: all 0.2s ease-in-out;
+   -moz-transition: all 0.2s ease-in-out;
+   -o-transition: all 0.2s ease-in-out;
+   -ms-transition: all 0.2s ease-in-out;
+   transition: all 0.2s ease-in-out;
+}
+
+.background {
+   background-image: url('/public/svg/sidebarbg.svg'); /* Remplacez avec le chemin de votre image */
+   background-size: cover; /* Couvre toute la zone disponible */
+   background-repeat: no-repeat;
+   background-position: center;
+   height: 100vh; /* Hauteur de la vue complète */
+   
 }

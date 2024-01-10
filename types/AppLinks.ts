@@ -1,3 +1,8 @@
+
+export interface SidebarItem {
+    href: string
+    label: string
+}
 export interface SidebarLinksProps {
     href: string
     label: string
