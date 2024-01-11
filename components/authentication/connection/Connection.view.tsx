@@ -1,6 +1,6 @@
 import React from 'react'
 import ConnectionForm from './Connection.form'
-import Image from 'react'
+import Image from 'next/image'
 import bg from '@/public/image/6026984.png';
 import phenix from '@/public/svg/phenix.svg';
 

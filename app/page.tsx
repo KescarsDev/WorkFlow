@@ -3,6 +3,7 @@ import Connectionview from '@/components/authentication/connection/Connection.vi
 export default function Home() {
   return (
     <>
+    
      <Connectionview/>
     
     </>

@@ -32,13 +32,13 @@ export default function OverviewActivities () {
     
     return (
         <>
-            <div className={'bg-green-50 border-b border-slate-300 p-8 grid grid-cols-12'}>
+            <div className={'bg-green-50 border-b border-slate-300 p-12 grid grid-cols-12'}>
                 {/* General Activities */}
-                <div className='col-span-8 border-r border-slate-300'>
+                <div className='col-span-8 pr-8 border-r border-slate-300'>
                     <h2 className='mb-6 text-xl'>
                         Activité Général
                     </h2>
-                    <div className='grid grid-cols-4 gap-4 p-12'>
+                    <div className='grid grid-cols-4 gap-10 p-2'>
                         {/* Card */}
                         {
                             overviewActivities.map(( item, i ) => (

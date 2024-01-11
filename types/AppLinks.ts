@@ -7,6 +7,7 @@ export interface SidebarLinksProps {
     href: string
     label: string
     icon: JSX.Element
+    hrefNew?: string
 }
 
 export type GeneralNavLinksProps = Omit<SidebarLinksProps, 'icon'>

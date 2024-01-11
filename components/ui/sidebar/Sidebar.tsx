@@ -38,16 +38,19 @@ export default function Sidebar () {
         },
         {
             href: '/user-space/call',
+            hrefNew: '/user-space/call/new',
             label: 'Appel',
             icon: MdAddIcCall
         },
         {
             href: '/user-space/visit',
+            hrefNew: '/user-space/visit/new',
             label: 'Visit',
             icon: IoPeopleCircleOutline
         },
         {
             href: '/user-space/mail',
+            hrefNew: '/user-space/mail/new',
             label: 'Courrier',
             icon: FaFileInvoice
         }
@@ -74,7 +77,7 @@ export default function Sidebar () {
                             <Link
                                 key={i}
                                 href={link.href}
-                                className={`${pathname === link.href && 'bg-primary-hoverLink'} flex space-x-2 hover:bg-my-primary-400 p-3 rounded-md animate`}
+                                className={`${pathname === link.href || pathname === link.hrefNew ? 'bg-primary-hoverLink' : ' '} flex space-x-2 hover:bg-my-primary-400 p-3 rounded-md animate`}
                             >
                                 {link.icon}
                                 <span>{link.label}</span>

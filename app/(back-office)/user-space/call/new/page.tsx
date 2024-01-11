@@ -22,7 +22,7 @@ export default function NewCall ({ form }:Props) {
                 title={'Nouvel Appel'}
                 href={'#'}
             />
-            <div className='mt-4'>
+            <div className='flex items-center mt-8 justify-center max-h-screen-lg overflow-hidden'>
                 {/* Form */}
                 <CallContainer />
             </div>

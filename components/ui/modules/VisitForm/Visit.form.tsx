@@ -127,6 +127,8 @@ export default function VisitForm ({form}: Props) {
                         register={register}
                         id='description'
                         className='mt-2'
+                        rows={2}
+                        cols={10}
                     />
                 </div>
             </div>

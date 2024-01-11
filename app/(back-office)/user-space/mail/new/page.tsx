@@ -9,7 +9,7 @@ export default function NewMail () {
                 title='Courrier'
                 href='/user-space/mail'
             />
-            <div className='mt-1.5'>
+            <div className='flex items-center mt-8 justify-center max-h-screen-lg overflow-hidden'>
                 <MailContainer />
             </div>
         </>

@@ -5,7 +5,11 @@ import React from 'react'
 export default function NewVisit () {
     return (
         <>
-            <div className='mt-4 max-h-screen'>
+            <FormHeader
+                title='Visite'
+                href='#'
+            />
+            <div className='flex items-center mt-8 justify-center max-h-screen-lg overflow-hidden'>
                 <VisitContainer />
             </div>
         </>

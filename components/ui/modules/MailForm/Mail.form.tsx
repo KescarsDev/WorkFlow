@@ -18,7 +18,7 @@ export default function ({form}: Props) {
     return (
         <form 
             onSubmit={handleSubmit(onSubmit)}
-            className='grid grid-cols-12 w-full max-w-5xl bg-white border border-gray-200 rounded-lg shadow sm:p-6 md:p-8 dark:bg-gray-800 dark:border-gray-700 mx-auto space-x-20 '
+            className='grid grid-cols-12 w-full overflow-hidden rounded-lg lg:max-w-lg xl:max-w-5xl 2xl:max-w-6xl bg-white border border-gray-200 shadow sm:p-6 md:p-8 dark:bg-gray-800 dark:border-gray-700 mx-auto space-x-20 '
         >
             <div className='col-span-6 space-y-4'>
                 <div className='flex items-center justify-between'>
@@ -145,7 +145,7 @@ export default function ({form}: Props) {
                         id='observation'
                         className='mt-2'
                         cols={30}
-                        rows={10}
+                        rows={2}
                     />
                 </div>
             </div>
