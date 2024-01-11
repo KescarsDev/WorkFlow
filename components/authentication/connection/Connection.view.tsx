@@ -6,7 +6,7 @@ import phenix from '@/public/svg/phenix.svg';
 
 export default function ConnectionView () {
     return (
-        <>        <div className=" h-screen shadow-lg flex flex-col justify-center sm:px-6 lg:px-6" style={{backgroundImage: "url(image/6026984.png)"}}>
+        <>        <div className=" h-screen shadow-lg flex flex-col justify-center sm:px-6 lg:px-8" style={{backgroundImage: "url(image/6026984.png)"}}>
             <div className="absolute top-7 mx-14">
                 <Image src="/svg/phenix.svg" alt="phenix" width="90" height="90" className="mx-2 mt-2 mb-2"/>
                 <h1 className="text-start text-white text-xl italic font-extrabold">P <span className="text-orange-300">H </span>É N <span
